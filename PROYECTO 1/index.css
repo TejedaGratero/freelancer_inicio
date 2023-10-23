@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+*{
+    box-sizing:border-box;
+}
+
+body {
+    font-family: 'Muli', sans-serif; /* Establece la fuente principal del cuerpo como 'Muli' y, si no está disponible, utiliza una fuente genérica 'sans-serif'. */
+    display: flex; /* Hace que el cuerpo use un modelo de caja flexible. */
+    justify-content: center; /* Centra horizontalmente los elementos hijos del cuerpo. */
+    align-items: center; /* Centra verticalmente los elementos hijos del cuerpo. */
+    height: 100vh; /* Establece la altura del cuerpo al 100% de la altura de la ventana (viewport). Esto hace que el contenido ocupe toda la altura de la ventana visible. */
+    overflow: hidden; /* Oculta las barras de desplazamiento si el contenido se desborda del cuerpo. */
+    margin: 0; /* Establece el margen del cuerpo en 0 píxeles, eliminando cualquier espacio en blanco alrededor del cuerpo. */
+}
+
+.container{
+    display: flex;
+    width: 90vw;
+}
+
+.panel h3 {
+    font-size: 24ph; /* Aquí parece haber un error tipográfico, debería ser 'px' en lugar de 'ph'. Establece el tamaño de fuente de los elementos h3 a 24 píxeles. */
+    position: absolute; /* Establece la posición absoluta para los elementos h3, lo que les permitirá posicionarse de manera precisa en relación con su primer elemento padre con posición relativa o absoluta. */
+    bottom: 20px; /* Coloca los elementos h3 a 20 píxeles desde la parte inferior de su contenedor. */
+    left: 20px; /* Coloca los elementos h3 a 20 píxeles desde el borde izquierdo de su contenedor. */
+    margin: 0; /* Establece el margen de los elementos h3 en 0 píxeles, eliminando cualquier espacio en blanco alrededor de ellos. */
+    opacity: 0; /* Establece la opacidad de los elementos h3 en 0, lo que los hará completamente invisibles. Para hacerlos visibles, la opacidad deberá cambiarse a un valor mayor que 0. */
+}
+
+.panel.active {
+    flex: 5;
+}
+
+.panel.active h3 {
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+
+
+@media (max-width: 480px) {
+    .container {
+      width: 100vw;
+    }
+  
+    .panel:nth-of-type(4),
+    .panel:nth-of-type(5) {
+      display: none;
+    }
+  }
