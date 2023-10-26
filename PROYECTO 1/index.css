@@ -1,49 +1,72 @@
-@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
-*{
-    box-sizing:border-box;
-}
-
+/* Establece estilos para el cuerpo de la página */
 body {
-    font-family: 'Muli', sans-serif; /* Establece la fuente principal del cuerpo como 'Muli' y, si no está disponible, utiliza una fuente genérica 'sans-serif'. */
-    display: flex; /* Hace que el cuerpo use un modelo de caja flexible. */
-    justify-content: center; /* Centra horizontalmente los elementos hijos del cuerpo. */
-    align-items: center; /* Centra verticalmente los elementos hijos del cuerpo. */
-    height: 100vh; /* Establece la altura del cuerpo al 100% de la altura de la ventana (viewport). Esto hace que el contenido ocupe toda la altura de la ventana visible. */
-    overflow: hidden; /* Oculta las barras de desplazamiento si el contenido se desborda del cuerpo. */
-    margin: 0; /* Establece el margen del cuerpo en 0 píxeles, eliminando cualquier espacio en blanco alrededor del cuerpo. */
-}
-
-.container{
-    display: flex;
-    width: 90vw;
-}
-
-.panel h3 {
-    font-size: 24ph; /* Aquí parece haber un error tipográfico, debería ser 'px' en lugar de 'ph'. Establece el tamaño de fuente de los elementos h3 a 24 píxeles. */
-    position: absolute; /* Establece la posición absoluta para los elementos h3, lo que les permitirá posicionarse de manera precisa en relación con su primer elemento padre con posición relativa o absoluta. */
-    bottom: 20px; /* Coloca los elementos h3 a 20 píxeles desde la parte inferior de su contenedor. */
-    left: 20px; /* Coloca los elementos h3 a 20 píxeles desde el borde izquierdo de su contenedor. */
-    margin: 0; /* Establece el margen de los elementos h3 en 0 píxeles, eliminando cualquier espacio en blanco alrededor de ellos. */
-    opacity: 0; /* Establece la opacidad de los elementos h3 en 0, lo que los hará completamente invisibles. Para hacerlos visibles, la opacidad deberá cambiarse a un valor mayor que 0. */
-}
-
-.panel.active {
-    flex: 5;
-}
-
-.panel.active h3 {
-    opacity: 1;
-    transition: opacity 0.3s ease-in 0.4s;
-}
-
-
-@media (max-width: 480px) {
+    font-family: 'Muli', sans-serif; /* Fuente del cuerpo de la página */
+    display: flex; /* Modelo de caja flexible para el cuerpo */
+    align-items: center; /* Centra verticalmente los elementos en el cuerpo */
+    justify-content: center; /* Centra horizontalmente los elementos en el cuerpo */
+    height: 100vh; /* Establece la altura al 100% del viewport height (altura de la ventana) */
+    overflow: hidden; /* Oculta cualquier desbordamiento */
+    margin: 0; /* Establece los márgenes en 0 */
+  }
+  
+  /* Estilos para el contenedor principal */
+  .container {
+    display: flex; /* Modelo de caja flexible para el contenedor */
+    width: 90vw; /* Establece el ancho al 90% del viewport width (ancho de la ventana) */
+  }
+  
+  /* Estilos para los paneles individuales */
+  .panel {
+    background-size: cover; /* Escala y ajusta la imagen de fondo para cubrir completamente el panel */
+    background-position: center; /* Centra la imagen de fondo */
+    background-repeat: no-repeat; /* Evita la repetición de la imagen de fondo */
+    height: 80vh; /* Establece la altura al 80% del viewport height */
+    border-radius: 50px; /* Aplica bordes redondeados al panel */
+    color: #fff; /* Color del texto en el panel */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el panel */
+    flex: 0.5; /* Define el factor de flexibilidad (flex) */
+    margin: 10px; /* Establece márgenes exteriores de 10 píxeles */
+    position: relative; /* Permite la posición relativa para elementos internos */
+    -webkit-transition: all 700ms ease-in; /* Aplica una transición de 700ms a todos los estilos */
+  }
+  
+  /* Estilos para el título en el panel */
+  .panel h3 {
+    font-size: 24px; /* Tamaño de fuente del título */
+    position: absolute; /* Posición absoluta para controlar la ubicación */
+    bottom: 20px; /* Coloca el título en la parte inferior */
+    left: 20px; /* Coloca el título a la izquierda */
+    margin: 0; /* Elimina los márgenes del título */
+    opacity: 0; /* Inicialmente, establece la opacidad en 0 para ocultar el título */
+  }
+  
+  /* Estilos para el panel activo (cuando se expande) */
+  .panel.active {
+    flex: 5; /* Aumenta el factor de flexibilidad cuando está activo */
+  }
+  
+  /* Estilos para el título en el panel activo */
+  .panel.active h3 {
+    opacity: 1; /* Aumenta la opacidad a 1 para mostrar el título */
+    transition: opacity 0.3s ease-in 0.4s; /* Aplica una transición a la opacidad */
+  }
+  
+  /* Estilos específicos para pantallas con un ancho máximo de 480 píxeles */
+  @media (max-width: 480px) {
     .container {
-      width: 100vw;
+      width: 100vw; /* Cambia el ancho al 100% del viewport width */
     }
   
+    /* Oculta los paneles 4 y 5 en dispositivos móviles */
     .panel:nth-of-type(4),
     .panel:nth-of-type(5) {
       display: none;
     }
   }
+  Estos comentarios explican la función de cada conjunto de reglas CSS y cómo contribuyen al diseño y comportamiento de la página.
+  
+  
+  
+  
+  
+  
